@@ -60,16 +60,3 @@ knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X_train, y_train)
 # Prédire les classes de l'ensemble de test
 y_pred = knn.predict(X_test)
-# Afficher la matrice de confusion
-conf_matrix = confusion_matrix(y_test, y_pred) #Necessite l'import: from sklearn.metrics import confusion_matrix
-sns.heatmap(conf_matrix, annot=True, cmap='Blues', fmt='d', xticklabels=df['Type of Answer'].unique(), yticklabels=df['Type of Answer'].unique())
-
-plt.title('Matrice de confusion')
-plt.xlabel('Prédictions')
-plt.ylabel('Vraies classes')
-plt.show()
-# Calculer l'exactitude
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Exactitude du modèle : {accuracy * 100:.2f}%") #Necessite l'import: from sklearn.metrics import accuracy_score
-# Afficher le rapport de classification
-print("Rapport de classification :\n", classification_report(y_test, y_pred)) # Necessite l'import: from sklearn.metrics import classification_report

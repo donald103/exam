@@ -60,3 +60,4 @@ knn = KNeighborsClassifier(n_neighbors=3)
 knn.fit(X_train, y_train)
 # Prédire les classes de l'ensemble de test
 y_pred = knn.predict(X_test)
+st.title("bonjour")
